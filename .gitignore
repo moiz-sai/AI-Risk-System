@@ -1,4 +1,5 @@
 data/raw/
 *.csv
 .idea/
-.ipynb_checkpoints/*.pkl 
+.ipynb_checkpoints/
+*.pkl
