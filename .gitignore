@@ -3,3 +3,5 @@ data/raw/
 .idea/
 .ipynb_checkpoints/
 *.pkl
+catboost_info/
+**/catboost_info/
