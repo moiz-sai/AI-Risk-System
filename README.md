@@ -11,7 +11,7 @@
 <!-- Status Badges -->
 <p align="center">
   <img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white&labelColor=0f0c29" />
-  <img src="https://img.shields.io/badge/F1%20Score-0.767-00d4ff?style=for-the-badge&logo=lightgbm&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/F1%20Score-0.8437-00d4ff?style=for-the-badge&logo=catboost&logoColor=white&labelColor=0f0c29" />
   <img src="https://img.shields.io/badge/Features-442-ff6b6b?style=for-the-badge&logo=databricks&logoColor=white&labelColor=0f0c29" />
   <img src="https://img.shields.io/badge/Dataset-590K%2B%20Transactions-e94560?style=for-the-badge&logo=database&logoColor=white&labelColor=0f0c29" />
   <img src="https://img.shields.io/badge/Python-3.10%2B-ffd700?style=for-the-badge&logo=python&logoColor=white&labelColor=0f0c29" />
@@ -46,12 +46,11 @@ This repository demonstrates a complete machine learning workflow for detecting 
 
 ## 📊 Live Experiment Dashboard
 
-<!-- Animated Stats Grid -->
 <div align="center">
 
 | 🏆 **Best F1** | ⚡ **Best Threshold** | 🧠 **Model** | 🔢 **Features** | 📈 **Improvement** |
 |:---:|:---:|:---:|:---:|:---:|
-| **0.767** | **0.25** | **LightGBM** | **442** | **+27.4%** over baseline |
+| **0.8437** | **0.25** | **CatBoost** | **442** | **+40.1%** over baseline |
 
 </div>
 
@@ -62,14 +61,14 @@ This repository demonstrates a complete machine learning workflow for detecting 
 |:-------:|------------|:--------:|:----:|:------:|
 | V1 | Random Forest Baseline | 0.602 | — | 🟡 Baseline |
 | V2 | RF + Balanced Weights | 0.570 | -0.032 | 🔴 Rejected |
-| V3 | **LightGBM Baseline** | ~0.740 | +0.14 | 🟢 Adopted |
-| V4 | Threshold Tuning | **0.767** | +0.02 | 🟢 Keep |
+| V3 | LightGBM Baseline | ~0.740 | +0.138 | 🟢 Adopted |
+| V4 | Threshold Tuning | 0.767 | +0.027 | 🟢 Keep |
 | V5 | Time Features (`trans_day`, `trans_weekday`) | 0.767 | ~0.000 | 🔴 Removed |
 | V6 | UID Statistics | 0.767+ | Positive | 🟢 Keep |
 | V7 | Velocity Features | 0.743 | -0.024 | 🔴 Removed |
 | V8 | UID2 (`card1 + addr1 + D1`) | 0.696 | -0.071 | 🔴 Rejected |
-| V9 | Native Categorical + Cleanup | **0.767** | — | 🟢 **Current** |
-| V10 | Winning Feature Engineering | **0.767+** | — | 🟢 **Production** |
+| V9 | Native Categorical + Cleanup | 0.767 | — | 🟢 Stable |
+| V10 | Full Model Benchmark (LGBM/XGB/Cat) | **0.8437** | **+0.0767** | 🟢 **🏆 Winner** |
 
 </details>
 
@@ -90,7 +89,7 @@ graph TD
     F --> I[📊 Threshold Tuning]
     G --> I
     H --> I
-    I --> J[🏆 Best Model Selection]
+    I --> J[🏆 Best Model Selection<br/>CatBoost F1: 0.8437]
     J --> K[📈 Model Analysis<br/>SHAP · PR · Calibration]
     K --> L[🔮 Fraud Prediction API]
 
@@ -354,31 +353,38 @@ The force plot decomposes a single prediction, showing exactly which features co
 <!-- Animated Divider -->
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-### 📋 Threshold Evaluation (LightGBM)
+### 📋 Threshold Evaluation — All Models
 
 <div align="center">
 
-| Threshold | Recall | Precision | F1 Score | Use Case |
-|:---------:|:------:|:---------:|:--------:|----------|
-| 0.10 | 0.796 | 0.599 | 0.683 | High recall (catch almost all fraud) |
-| 0.15 | 0.758 | 0.733 | 0.745 | Balanced detection |
-| 0.20 | 0.726 | 0.809 | 0.765 | Strong precision |
-| **0.25** ⭐ | **0.693** | **0.859** | **0.767** | **🏆 Optimal F1** |
-| 0.30 | 0.669 | 0.895 | 0.766 | High precision |
-| 0.40 | 0.615 | 0.932 | 0.741 | Conservative flagging |
-| 0.50 | 0.569 | 0.954 | 0.712 | Minimal false positives |
+#### 🐱 CatBoost (🏆 Winner)
+| Threshold | Recall | Precision | F1 Score | AUC |
+|:---------:|:------:|:---------:|:--------:|:---:|
+| **0.25** ⭐ | **0.8028** | **0.8891** | **0.8437** | **0.9784** |
+
+#### 🌲 LightGBM
+| Threshold | Recall | Precision | F1 Score | AUC |
+|:---------:|:------:|:---------:|:--------:|:---:|
+| 0.25 | 0.7769 | 0.8783 | 0.8245 | 0.9759 |
+
+#### ⚡ XGBoost
+| Threshold | Recall | Precision | F1 Score | AUC |
+|:---------:|:------:|:---------:|:--------:|:---:|
+| 0.25 | 0.7554 | 0.8608 | 0.8046 | 0.9729 |
 
 </div>
 
-### Algorithm Benchmark
+---
 
-| Model | F1 Score | Training Time | Inference Speed | Best For |
-|-------|:--------:|:-------------:|:---------------:|----------|
-| LightGBM | **0.767** | ⚡ Fast | ⚡ Fast | Current production choice |
-| XGBoost | TBD | TBD | TBD | Under evaluation |
-| CatBoost | TBD | TBD | TBD | Under evaluation |
+### 🏆 Algorithm Benchmark
 
-> **🔄 Next Update:** Full 3-model benchmark with frozen features for fair comparison.
+| Model | F1 Score | Recall | Precision | AUC | Training Time | Inference Speed | Status |
+|-------|:--------:|:------:|:---------:|:---:|:-------------:|:---------------:|:------:|
+| **CatBoost** | **0.8437** | **0.8028** | **0.8891** | **0.9784** | 🐢 Moderate | 🐢 Moderate | 🏆 **Production** |
+| LightGBM | 0.8245 | 0.7769 | 0.8783 | 0.9759 | ⚡ Fast | ⚡ Fast | 🥈 Runner-up |
+| XGBoost | 0.8046 | 0.7554 | 0.8608 | 0.9729 | ⚡ Fast | ⚡ Fast | 🥉 Third |
+
+> **🎯 Decision:** CatBoost wins on F1, Recall, Precision, and AUC. Despite slightly slower training/inference, the **+1.92 F1 points over LightGBM** justify it as the production model.
 
 ---
 
@@ -452,7 +458,7 @@ python src/evaluate.py --threshold-search
 ```python
 import joblib
 
-model = joblib.load('models/best_lgbm_model.pkl')
+model = joblib.load('models/best_catboost_model.pkl')
 # Returns fraud probability (0-1)
 probability = model.predict_proba(your_transaction_df)[:, 1]
 ```
@@ -485,7 +491,7 @@ AI-Risk-System/
 │   │   └── train_v10_winning_fe.pkl
 │   └── raw/                    # Original Kaggle CSVs
 ├── 📁 models/                  # Trained model artifacts
-│   ├── best_lgbm.pkl           # Production model
+│   ├── best_catboost.pkl       # 🏆 Production model
 │   └── experiments/            # Versioned experiment artifacts
 ├── 📁 notebooks/
 │   ├── catboost_info/          # CatBoost training logs
@@ -602,6 +608,6 @@ If you use this code or dataset analysis in your research, please cite:
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=150&section=footer&text=Happy%20Fraud%20Hunting!&fontSize=30&fontColor=00d4ff&animation=fadeIn" width="100%"/>
 
 **⭐ Star this repo if it helped you!**  
-*Built with 💜, LightGBM, SHAP, and a lot of coffee.*
+*Built with 💜, CatBoost, SHAP, and a lot of coffee.*
 
 </div>
