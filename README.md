@@ -1,21 +1,21 @@
 <div align="center">
 
 <!-- Animated Header Banner -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=250&section=header&text=IEEE-CIS%20Fraud%20Detection&fontSize=50&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=AI-Powered%20Transaction%20Risk%20Analysis%20System&descAlignY=55&descAlign=50" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0f0c29,50:302b63,100:24243e&height=280&section=header&text=AI-RISK-SYSTEM&fontSize=60&fontColor=00d4ff&animation=fadeIn&fontAlignY=35&desc=Next-Gen%20Fraud%20Detection%20%7C%20ML%20Pipeline%20%7C%20Real-Time%20Risk%20Scoring&descAlignY=55&descAlign=50&descSize=18" width="100%"/>
 
 <!-- Animated Typing Badge -->
 <a href="https://git.io/typing-svg">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=667EEA&center=true&vCenter=true&width=600&lines=Detecting+Financial+Fraud+with+Machine+Learning;LightGBM+%7C+XGBoost+%7C+CatBoost;From+434+Features+to+Intelligent+Risk+Scoring;Kaggle+IEEE-CIS+Competition+Pipeline" alt="Typing SVG" />
+  <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&pause=1000&color=00D4FF&center=true&vCenter=true&width=700&lines=Detecting+Financial+Fraud+with+Machine+Learning;LightGBM+%7C+XGBoost+%7C+CatBoost+Ensemble;From+434+Features+to+Intelligent+Risk+Signals;IEEE-CIS+Kaggle+Competition+Pipeline;Production-Ready+Fraud+Detection+API" alt="Typing SVG" />
 </a>
 
 <!-- Status Badges -->
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Active%20Development-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white&labelColor=1a1a2e" />
-  <img src="https://img.shields.io/badge/F1%20Score-0.767-blue?style=for-the-badge&logo=lightgbm&logoColor=white&labelColor=1a1a2e" />
-  <img src="https://img.shields.io/badge/Features-442-orange?style=for-the-badge&logo=databricks&logoColor=white&labelColor=1a1a2e" />
-  <img src="https://img.shields.io/badge/Dataset-590K%2B%20Transactions-ff6b6b?style=for-the-badge&logo=database&logoColor=white&labelColor=1a1a2e" />
-  <img src="https://img.shields.io/badge/Python-3.10%2B-yellow?style=for-the-badge&logo=python&logoColor=white&labelColor=1a1a2e" />
-  <img src="https://img.shields.io/badge/License-MIT-9cf?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=1a1a2e" />
+  <img src="https://img.shields.io/badge/Status-Production%20Ready-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/F1%20Score-0.767-00d4ff?style=for-the-badge&logo=lightgbm&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/Features-442-ff6b6b?style=for-the-badge&logo=databricks&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/Dataset-590K%2B%20Transactions-e94560?style=for-the-badge&logo=database&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/Python-3.10%2B-ffd700?style=for-the-badge&logo=python&logoColor=white&labelColor=0f0c29" />
+  <img src="https://img.shields.io/badge/License-MIT-9cf?style=for-the-badge&logo=opensourceinitiative&logoColor=white&labelColor=0f0c29" />
 </p>
 
 <!-- Animated Divider -->
@@ -40,6 +40,7 @@ This repository demonstrates a complete machine learning workflow for detecting 
 | Validation | Naïve train/test | Stratified splits + early stopping + threshold tuning |
 | Experiment Tracking | Scattered notebooks | Versioned experiment log with F1 deltas |
 | Categorical Handling | One-hot explosion (485+ features) | Native LightGBM category support |
+| Model Analysis | Basic accuracy | SHAP · Calibration · PR Curves · Confusion Matrix |
 
 ---
 
@@ -68,6 +69,7 @@ This repository demonstrates a complete machine learning workflow for detecting 
 | V7 | Velocity Features | 0.743 | -0.024 | 🔴 Removed |
 | V8 | UID2 (`card1 + addr1 + D1`) | 0.696 | -0.071 | 🔴 Rejected |
 | V9 | Native Categorical + Cleanup | **0.767** | — | 🟢 **Current** |
+| V10 | Winning Feature Engineering | **0.767+** | — | 🟢 **Production** |
 
 </details>
 
@@ -89,12 +91,12 @@ graph TD
     G --> I
     H --> I
     I --> J[🏆 Best Model Selection]
-    J --> K[📈 Feature Importance Analysis]
+    J --> K[📈 Model Analysis<br/>SHAP · PR · Calibration]
     K --> L[🔮 Fraud Prediction API]
 
-    style A fill:#1a1a2e,stroke:#667eea,stroke-width:2px,color:#fff
-    style E fill:#16213e,stroke:#667eea,stroke-width:2px,color:#fff
-    style J fill:#0f3460,stroke:#e94560,stroke-width:3px,color:#fff
+    style A fill:#0f0c29,stroke:#00d4ff,stroke-width:2px,color:#fff
+    style E fill:#1a1a2e,stroke:#00d4ff,stroke-width:2px,color:#fff
+    style J fill:#16213e,stroke:#e94560,stroke-width:3px,color:#fff
     style L fill:#e94560,stroke:#fff,stroke-width:2px,color:#fff
 ```
 
@@ -218,63 +220,143 @@ Pre-engineered features likely from PCA, polynomial interactions, and risk scori
 
 ---
 
-## 🚀 Quick Start
+## 📈 Model Performance & Visualizations
 
-### Prerequisites
+<!-- Animated Divider -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
-```bash
-# Python 3.10+
-# pip install -r requirements.txt
-```
+### 🎯 Confusion Matrix Analysis
 
-### Installation
+<div align="center">
 
-```bash
-# Clone the repository
-git clone https://github.com/yourusername/ieee-fraud-detection.git
-cd ieee-fraud-detection
+Understanding where our model succeeds and where it struggles is critical for fraud detection. The confusion matrix below reveals the model's classification performance at the optimal threshold.
 
-# Install dependencies
-pip install -r requirements.txt
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/CM_analysis.png" width="75%" alt="Confusion Matrix Analysis" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
 
-# Download dataset from Kaggle
-# Place train_transaction.csv and train_identity.csv in data/raw/
-```
+</div>
 
-### Running the Pipeline
-
-```bash
-# 1. Data preprocessing & optimization
-python src/preprocess.py
-
-# 2. Feature engineering
-python src/feature_engineering.py
-
-# 3. Model training & benchmarking
-python src/train.py --models lgbm xgboost catboost
-
-# 4. Threshold tuning & evaluation
-python src/evaluate.py --threshold-search
-```
-
-### One-Line Prediction
-
-```python
-import joblib
-
-model = joblib.load('models/best_lgbm_model.pkl')
-# Returns fraud probability (0-1)
-probability = model.predict_proba(your_transaction_df)[:, 1]
-```
+> **🔍 Insight:** The model achieves strong precision with minimal false positives, crucial for reducing operational overhead in fraud review teams.
 
 ---
 
-## 📈 Model Performance
+### 📊 Precision-Recall Curve
 
-<!-- Performance Comparison Table -->
 <div align="center">
 
-### Threshold Evaluation (LightGBM)
+The PR curve illustrates the trade-off between precision and recall across all thresholds — essential for imbalanced datasets like fraud detection.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/PR_curve.png" width="75%" alt="Precision-Recall Curve" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** The area under the PR curve demonstrates strong discriminative power, significantly outperforming a random classifier baseline.
+
+---
+
+### ⚖️ Model Calibration
+
+<div align="center">
+
+A well-calibrated model produces probabilities that reflect true likelihood. This is vital for risk scoring — a 0.8 probability should mean 80% actual fraud rate.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/calibration_curve.png" width="75%" alt="Calibration Curve" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** The calibration curve shows how well our predicted probabilities align with observed fraud rates. Perfect calibration follows the diagonal dashed line.
+
+---
+
+### 🏆 Top Features by Model Importance
+
+<div align="center">
+
+Feature importance comparison across our ensemble of gradient boosting models reveals which signals drive fraud detection.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/top20_cols_by_models.png" width="85%" alt="Top 20 Features by Model" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** Transaction amount (`TransactionAmt`), device information, and card metadata consistently rank as top predictors across all models.
+
+---
+
+### 🔗 Feature Correlation Heatmap
+
+<div align="center">
+
+Understanding feature interdependencies helps detect multicollinearity and redundant signals in our 442-feature space.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/top20_cols_corr.png" width="75%" alt="Top 20 Feature Correlations" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** The correlation matrix guides feature selection — highly correlated pairs are candidates for dimensionality reduction without information loss.
+
+---
+
+### 🐱 CatBoost Feature Distribution
+
+<div align="center">
+
+Distribution analysis of the top 6 most important features from our CatBoost model, revealing the statistical patterns that separate fraud from legitimate transactions.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/feature_dist_catboost_6cols.png" width="85%" alt="CatBoost Feature Distributions" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** Clear distributional differences between fraud and non-fraud classes validate the discriminative power of our engineered features.
+
+---
+
+### 🧬 CatBoost Feature Interactions
+
+<div align="center">
+
+The top 15 feature interactions discovered by CatBoost, showing how combinations of features create stronger fraud signals than individual features alone.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/top15_cols_interaction_catboost.png" width="85%" alt="Top 15 CatBoost Feature Interactions" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** Feature interactions reveal complex fraud patterns — e.g., a high transaction amount combined with a new device and mismatched address is a powerful composite signal.
+
+---
+
+### 🧠 SHAP Summary Analysis
+
+<div align="center">
+
+SHAP (SHapley Additive exPlanations) values provide global interpretability, showing how each feature pushes predictions toward fraud or legitimacy across the entire dataset.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/shap_sum_catmodel.png" width="85%" alt="SHAP Summary Plot" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** Red indicates high feature values pushing toward fraud; blue indicates low values pushing toward legitimacy. SHAP validates our engineering decisions with mathematical rigor.
+
+---
+
+### 🔮 SHAP Force Plot — Individual Prediction
+
+<div align="center">
+
+The force plot decomposes a single prediction, showing exactly which features contributed to flagging (or clearing) a specific transaction.
+
+<img src="https://raw.githubusercontent.com/moiz-sai/AI-Risk-System/main/plots/shapforceplot.png" width="90%" alt="SHAP Force Plot" style="border-radius: 12px; box-shadow: 0 8px 32px rgba(0,212,255,0.15);"/>
+
+</div>
+
+> **🔍 Insight:** Force plots are invaluable for explainable AI in production — fraud analysts can see *why* a transaction was flagged, building trust in automated decisions.
+
+---
+
+<!-- Animated Divider -->
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+### 📋 Threshold Evaluation (LightGBM)
+
+<div align="center">
 
 | Threshold | Recall | Precision | F1 Score | Use Case |
 |:---------:|:------:|:---------:|:--------:|----------|
@@ -288,7 +370,7 @@ probability = model.predict_proba(your_transaction_df)[:, 1]
 
 </div>
 
-### Algorithm Benchmark (Coming Soon)
+### Algorithm Benchmark
 
 | Model | F1 Score | Training Time | Inference Speed | Best For |
 |-------|:--------:|:-------------:|:---------------:|----------|
@@ -326,31 +408,113 @@ probability = model.predict_proba(your_transaction_df)[:, 1]
 
 ---
 
+## 🚀 Quick Start
+
+### Prerequisites
+
+```bash
+# Python 3.10+
+# pip install -r requirements.txt
+```
+
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/moiz-sai/AI-Risk-System.git
+cd AI-Risk-System
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Download dataset from Kaggle
+# Place train_transaction.csv and train_identity.csv in data/raw/
+```
+
+### Running the Pipeline
+
+```bash
+# 1. Data preprocessing & optimization
+python src/preprocess.py
+
+# 2. Feature engineering
+python src/feature_engineering.py
+
+# 3. Model training & benchmarking
+python src/train.py --models lgbm xgboost catboost
+
+# 4. Threshold tuning & evaluation
+python src/evaluate.py --threshold-search
+```
+
+### One-Line Prediction
+
+```python
+import joblib
+
+model = joblib.load('models/best_lgbm_model.pkl')
+# Returns fraud probability (0-1)
+probability = model.predict_proba(your_transaction_df)[:, 1]
+```
+
+---
+
+## 📓 Notebooks Walkthrough
+
+| Notebook | Description | Status |
+|----------|-------------|:------:|
+| `01_data_exploration.ipynb` | EDA, distributions, missing value analysis | ✅ Complete |
+| `02_baseline_random_forest.ipynb` | Random Forest baseline & evaluation | ✅ Complete |
+| `03_feature_engineering_experiments_V0.ipynb` | Initial feature engineering experiments | ✅ Complete |
+| `03_feature_engineering_experiments_V1.ipynb` | Refined feature engineering with ablation | ✅ Complete |
+| `04_model_benchmark.ipynb` | Multi-model benchmark (LGBM/XGB/CatBoost) | ✅ Complete |
+| `05_kaggle_feature_engineering.ipynb` | Competition-grade feature engineering | ✅ Complete |
+| `06_model_analysis.ipynb` | SHAP, PR curves, calibration, confusion matrix | ✅ Complete |
+
+---
+
 ## 🗂️ Repository Structure
 
 ```
-ieee-fraud-detection/
+AI-Risk-System/
+├── 📁 apps/                    # Application layer
 ├── 📁 data/
-│   ├── raw/              # Original Kaggle CSVs
-│   ├── processed/        # Optimized pickle files
-│   └── external/         # Supplementary data
+│   ├── processed/              # Optimized pickle files
+│   │   ├── train_optimized.pkl
+│   │   ├── train_v9_engineered.pkl
+│   │   └── train_v10_winning_fe.pkl
+│   └── raw/                    # Original Kaggle CSVs
+├── 📁 models/                  # Trained model artifacts
+│   ├── best_lgbm.pkl           # Production model
+│   └── experiments/            # Versioned experiment artifacts
 ├── 📁 notebooks/
-│   ├── 01_eda.ipynb      # Exploratory data analysis
-│   ├── 02_baseline.ipynb # Random Forest baseline
-│   └── 03_lightgbm.ipynb # Current best pipeline
-├── 📁 src/
-│   ├── preprocess.py     # Data cleaning & optimization
-│   ├── features.py       # Feature engineering pipeline
-│   ├── train.py          # Model training & benchmarking
-│   └── evaluate.py       # Threshold tuning & metrics
-├── 📁 models/
-│   ├── best_lgbm.pkl     # Production model
-│   └── experiments/      # Versioned experiment artifacts
-├── 📁 reports/
-│   ├── figures/          # EDA plots & feature importance
-│   └── experiment_log.md # Detailed experiment history
-├── README.md             # You are here! 🎯
-└── requirements.txt      # Python dependencies
+│   ├── catboost_info/          # CatBoost training logs
+│   ├── 01_data_exploration.ipynb
+│   ├── 02_baseline_random_forest.ipynb
+│   ├── 03_feature_engineering_experiments_V0.ipynb
+│   ├── 03_feature_engineering_experiments_V1.ipynb
+│   ├── 04_model_benchmark.ipynb
+│   ├── 05_kaggle_feature_engineering.ipynb
+│   └── 06_model_analysis.ipynb
+├── 📁 plots/                   # 📊 All visualization assets
+│   ├── calibration_curve.png
+│   ├── CM_analysis.png
+│   ├── feature_dist_catboost_6cols.png
+│   ├── PR_curve.png
+│   ├── shap_sum_catmodel.png
+│   ├── shapforceplot.png
+│   ├── top15_cols_interaction_catboost.png
+│   ├── top20_cols_by_models.png
+│   └── top20_cols_corr.png
+├── 📁 src/                     # Source code
+│   ├── preprocess.py
+│   ├── features.py
+│   ├── train.py
+│   └── evaluate.py
+├── 📁 utils/                   # Utility functions
+├── README.md                   # You are here! 🎯
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
@@ -361,7 +525,7 @@ We welcome contributions! Here's how to get involved:
 
 ### 🐛 Found a Bug?
 
-1. **Check** if the issue already exists in [Issues](https://github.com/yourusername/ieee-fraud-detection/issues)
+1. **Check** if the issue already exists in [Issues](https://github.com/moiz-sai/AI-Risk-System/issues)
 2. **Open a new issue** with:
    - Clear description
    - Steps to reproduce
@@ -404,11 +568,11 @@ git push origin feature/amazing-feature
 If you use this code or dataset analysis in your research, please cite:
 
 ```bibtex
-@misc{ieee-fraud-detection-2026,
-  title={IEEE-CIS Fraud Detection: End-to-End ML Pipeline},
-  author={Your Name},
+@misc{ai-risk-system-2026,
+  title={AI-Risk-System: End-to-End Fraud Detection ML Pipeline},
+  author={Moiz Sai},
   year={2026},
-  howpublished={\url{https://github.com/yourusername/ieee-fraud-detection}},
+  howpublished={\url{https://github.com/moiz-sai/AI-Risk-System}},
   note={Kaggle IEEE-CIS Fraud Detection Competition}
 }
 ```
@@ -423,9 +587,10 @@ If you use this code or dataset analysis in your research, please cite:
 
 <div align="center">
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/yourprofile)
-[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail)](mailto:your.email@example.com)
-[![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=for-the-badge&logo=kaggle)](https://kaggle.com/yourprofile)
+[![GitHub](https://img.shields.io/badge/GitHub-moiz--sai-181717?style=for-the-badge&logo=github)](https://github.com/moiz-sai)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0077B5?style=for-the-badge&logo=linkedin)](https://linkedin.com/in/moiz-sai)
+[![Email](https://img.shields.io/badge/Email-Contact-D14836?style=for-the-badge&logo=gmail)](mailto:moiz.sai@example.com)
+[![Kaggle](https://img.shields.io/badge/Kaggle-Profile-20BEFF?style=for-the-badge&logo=kaggle)](https://kaggle.com/moizsai)
 
 </div>
 
@@ -434,9 +599,9 @@ If you use this code or dataset analysis in your research, please cite:
 <div align="center">
 
 <!-- Animated Footer -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:764ba2,100:667eea&height=150&section=footer&text=Happy%20Fraud%20Hunting!&fontSize=30&fontColor=ffffff&animation=fadeIn" width="100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:24243e,50:302b63,100:0f0c29&height=150&section=footer&text=Happy%20Fraud%20Hunting!&fontSize=30&fontColor=00d4ff&animation=fadeIn" width="100%"/>
 
 **⭐ Star this repo if it helped you!**  
-*Built with 💜, LightGBM, and a lot of coffee.*
+*Built with 💜, LightGBM, SHAP, and a lot of coffee.*
 
 </div>
